@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html class="background">
+    <head>
+	<title>picTuring</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    </head>
+    <body>
+	
+	<div id="uileft">
+		<h1>picTuring</h1>
+		<p>Current State: <span id="state">0</span></p>
+		<p>Steps: <span id="steps">0</span></p>
+	</div>
+	<div id="uiright">
+		<form>
+			<div class='dropdown'>
+				<h2>Code</h2>
+				<div class='dropdown-content'>
+					<textarea id="turingCode" rows="20" cols="40">// Type your code here</textarea>
+				</div>
+			</div>
+			<div class='dropdown'> 
+				<h2>Edit</h2>
+				<div class="dropdown-content">
+					<button class="ui-fill" id="paint" type="button" onclick="btnpaint()">Paint</button><br>
+					Color:<br>
+					<input class="ui-fill" id="colorhex" type="text" name="color"><br>
+					<div class="ui-fill two"> 
+						<button type="button" onclick="btnclear()">Clear</button>
+						<button type="button" onclick="btnok()">Ok</button>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown">
+				<h2>Controls</h2>
+				<div id='controlsdiv' class="dropdown-content">
+					<div class="ui-fill">
+						<button type="button" onclick="btnreset()">Reset</button>
+						<button type="button" onclick="stepturing()">Step</button>
+						<button id="pause" type="button" onclick="btnpause()">Run</button>
+					</div>					
+					<div class="ui-fill">
+						<input type="radio" name="speed" value="med" checked> Medium
+						<input type="radio" name="speed" value="fast"> Fast
+						<input type="radio" name="speed" value="max"> Max
+						<input type="radio" name="speed" value="hyper"> Hyper
+					</div>
+				</div>
+			</div>
+			<div class="dropdown">
+				<h2>Options</h2>
+				<div class="dropdown-content">
+					<div class="ui-fill">
+						<input id="smooth" type="checkbox"> Smooth
+					</div>
+					<div class="ui-fill">
+						<input id="autopan" type="checkbox"> Auto-Pan
+					</div>
+					<div class="ui-fill">
+						<input id="dark" type="checkbox" checked> Dark
+					</div>
+					<div class="ui-fill">
+						<input id="hidetext" type="checkbox"> Hide Text
+					</div>
+				</div>
+			</div>
+			<div class="dropdown">
+				<h2>Save</h2>
+				<div class="dropdown-content">
+					<br>
+					<input  class="ui-fill" id="save" type="text">
+					<br>
+					<div class="ui-fill two">
+						<button type="button" onclick="btnload()">Load</button>
+						<button type="button" onclick="btngen()">Generate</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	
+	<canvas id="turingCanvas" width="200" height="100" tabindex="1">
+	</canvas>
+	
+	<!-- Scripts -->
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/lz-string.min.js"></script>
+    <script src="js/bin/min.js"></script>
+    </body>
+</html>
